@@ -37,6 +37,7 @@ export default class ImageGallery extends Component {
   };
 
   componentDidUpdate(prevProps) {
+    this.scrollWindow();
     if (prevProps.inputValue !== this.props.inputValue) {
       this.setState({
         status: 'pending',
@@ -50,6 +51,14 @@ export default class ImageGallery extends Component {
       this.loadMorePhoto();
     }
   }
+
+  scrollWindow = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      left: 100,
+      behavior: 'smooth',
+    });
+  };
 
   render() {
     const { photos, status } = this.state;
