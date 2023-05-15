@@ -1,4 +1,5 @@
 import CSS from './ImageGalleryItem.module.css';
+import PropTypes from 'prop-types';
 
 export default function ImageGalleryItem({ url, tags, modalUrl, getTags }) {
   return (
@@ -15,3 +16,10 @@ export default function ImageGalleryItem({ url, tags, modalUrl, getTags }) {
     </li>
   );
 }
+
+ImageGalleryItem.propTypes = {
+  url: PropTypes.string,
+  tags: PropTypes.string,
+  modalUrl: PropTypes.string,
+  getTags: PropTypes.string,
+};
